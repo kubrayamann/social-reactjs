@@ -1,5 +1,7 @@
 import "./sidebar.css";
 import {RssFeed, Chat,PlayCircleFilledOutlined,Group, Bookmark, HelpOutline, WorkOutline, Event, School} from "@mui/icons-material";
+import {Users} from "../../dummyData"
+import Friend from "../friend/Friend";
 export default function Sidebar(){
     return (
         <div className="sidebar">
@@ -45,18 +47,9 @@ export default function Sidebar(){
                 <button className="sidebarButton">Show More</button>
                 <hr className="sidebarHr"/>
                 <ul className="sidebarFriendList">
-                    <li className="sidebarFriend">
-                        <img src="/assets/person/2.jpg" alt="" className="sidebarFriendImg" />
-                        <span className="sidebarFriendName">Jane Doe</span>
-                    </li>
-                    <li className="sidebarFriend">
-                        <img src="/assets/person/4.jpg" alt="" className="sidebarFriendImg" />
-                        <span className="sidebarFriendName">Mike Jackson</span>
-                    </li>
-                    <li className="sidebarFriend">
-                        <img src="/assets/person/3.jpg" alt="" className="sidebarFriendImg" />
-                        <span className="sidebarFriendName">Emma Watson</span>
-                    </li>                     
+                    {Users.map(u => (
+                        <Friend key={u.id} user={u}/>
+                    ))}                  
                 </ul>
             </div>
         </div>
