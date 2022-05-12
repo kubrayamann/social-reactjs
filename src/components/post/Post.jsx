@@ -17,7 +17,7 @@ export default function Post({post}) {
         <div className="postWrapper">
             <div className="postTop">
                 <div className="postTopLeft">
-                    <img className="postProfileImg" src={Users.filter(u=>u.id === post.userId)[0].profilePicture} alt="" />
+                    <img className="postProfileImg" src={PF+Users.filter(u=>u.id === post.userId)[0].profilePicture} alt="" />
                     <span className="postUserName">{Users.filter(u=>u.id === post.userId)[0].username}</span>
                     <span className="postDate">{post.date}</span>
                 </div>
@@ -31,8 +31,8 @@ export default function Post({post}) {
             </div>
             <div className="postBottom">
                 <div className="postBottomLeft">
-                    <img className="postBottomLeftItem" src="assets/like.png" onClick={likeHandler} alt="" />
-                    <img className="postBottomLeftItem" src="assets/heart.png" onClick={likeHandler} alt="" />
+                    <img className="postBottomLeftItem" src={PF+"like.png"} onClick={likeHandler} alt="" />
+                    <img className="postBottomLeftItem" src={PF+"heart.png"} onClick={likeHandler} alt="" />
                     <span className="postBottomLeftCounter">{like} people like it</span>
                 </div>
                 <div className="postBottomRight">
